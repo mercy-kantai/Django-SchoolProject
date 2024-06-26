@@ -15,6 +15,7 @@ class Teacher(models.Model):
     phone_number = models.CharField()
     department = models.CharField()
     office_hours = models.CharField()
+    bio = models.
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
