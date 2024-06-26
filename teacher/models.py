@@ -1,4 +1,7 @@
 from django.db import models
+from .models import Student
+from .models import Course
+
 
 # Create your models here.
 class Teacher(models.Model):
@@ -7,8 +10,8 @@ class Teacher(models.Model):
     email = models.EmailField()
     code_id = models.PositiveSmallIntegerField()
     country = models.CharField()
-    course_taught = models.CharField()
-    class_taught = models.CharField()
+    course_taught = models.OneToOneField(Course)
+    student = models.ForeignKey(Student, on_delete = models.CASCADE)
     phone_number = models.CharField()
     department = models.CharField()
     office_hours = models.CharField()

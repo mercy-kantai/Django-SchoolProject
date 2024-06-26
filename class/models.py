@@ -1,9 +1,10 @@
 from django.db import models
+from .models import Teacher
 
 # Create your models here.
 class Class(models.Model):
      class_name = models.CharField(max_length=20)
-     class_teacher = models.CharField(max_length=20)
+     teacher = models.OneToOneField(Teacher, on_delete=models.CASCADE)
      class_course = models.CharField(max_length=20) 
      class_id = models.PositiveSmallIntegerField()
      class_description = models.TextField()
